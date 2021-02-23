@@ -33,8 +33,8 @@ def main(url):
     while(True):
         idx = random.randrange(0, n_movies)
         
-        return titles[idx],years[idx] #, Rating: {ratings[idx]:.1f}, Starring: {actors_list[idx]}')
-        
+        return titles[idx],years[idx] , ratings[idx] , actors_list[idx]
+
 
         
     

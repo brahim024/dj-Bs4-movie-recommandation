@@ -6,13 +6,15 @@ class Movie(models.Model):
     url=models.URLField()
     years=models.CharField(max_length=100,blank=True)
     actor_list=models.CharField(max_length=100,blank=True)
-    rating=models.CharField(max_length=200,blank=100)
+    rating=models.CharField(max_length=2,blank=100)
 
     def __str__(self):
         return self.name
 
     def save(self,*args,**kwargs):
-        titles,years=main(self.url)
+        titles,years,rating,actor_list=main(self.url)
         self.name=titles
         self.years=years
+        self.actor_list=actor_list
+        self.rating=rating
         super().save(*args,**kwargs)

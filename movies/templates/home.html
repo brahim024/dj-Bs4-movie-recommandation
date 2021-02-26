@@ -3,24 +3,31 @@
 
 {% block content %}
     
-  {% for item in qs %}
-    <div class="card mt-2 r-2" style="width: 18rem;">
-      <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fb%2Fb5%2F12_Angry_Men_(1957_film_poster).jpg&f=1&nofb=1" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{item.name}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+  <div class="contianer">
+    <div class="card-deck">
+      {% for item in qs %}
+      <div class="card mt-4" style="max-width: 14rem; border: 0" >
+        <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="text-muted"><b>Actors:</b></p>
+          <p class="card-text">{{item.actor_list}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{item.years}}</small>
+          <hr>
+          <span class="fa fa-star"></span>
+          <small class="text-muted">{{item.rating}}</small>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  {% endfor %}
+     {% endfor %}
+</div>  
+  </div>
+  
 
 {% endblock content %}
-    
+  
+
+
+<!--https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.kolpaper.com%2Fwp-content%2Fuploads%2F2020%2F04%2FLa-Casa-De-Papel-Poster.jpg&f=1&nofb=1-->

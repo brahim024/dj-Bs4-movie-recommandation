@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 <html lang="en">
 
 <head>
@@ -52,7 +52,7 @@
               <div class="col-12 col-md-9 mb-2 mb-md-0">
                 <div class="form-control form-control-lg">
                   {% csrf_token %}
-                  {{form}}
+                  {{form|crispy}}
                 </div>
                 <!--<input type="email" class="form-control form-control-lg" placeholder="Enter your email...">-->
               </div>

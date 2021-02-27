@@ -4,8 +4,8 @@ from .scrap import main
 class Movie(models.Model):
     name=models.CharField(max_length=30,blank=True)
     url=models.URLField()
-    years=models.CharField(max_length=100,blank=True)
-    actor_list=models.CharField(max_length=100,blank=True)
+    #years=models.CharField(max_length=100,blank=True)
+    #actor_list=models.CharField(max_length=100,blank=True)
     rating=models.CharField(max_length=2,blank=100)
     image=models.URLField(blank=True)
 
@@ -13,10 +13,10 @@ class Movie(models.Model):
         return self.name
 
     def save(self,*args,**kwargs):
-        titles,years,rating,actor_list,img=main(self.url)
+        titles,rating,img=main(self.url)
         self.name=titles
-        self.years=years
-        self.actor_list=actor_list
+        #self.years=years
+        #self.actor_list=actor_list
         self.rating=rating
-        #self.image=img
+        self.image=img
         super().save(*args,**kwargs)

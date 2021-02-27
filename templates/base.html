@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% load bootstrap %}
+
 <html lang="en">
 
 <head>
@@ -56,9 +57,10 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="" method="POST">
+      {% csrf_token %}
+      {{form|bootstrap}}
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0" >Get Movie</button>
     </form>
   </div>
 </nav>
@@ -69,7 +71,7 @@
   <!-- Navigation -->
   
   <!-- Masthead -->
- 
+
   <!-- Icons Grid -->
   
   {% block content %}

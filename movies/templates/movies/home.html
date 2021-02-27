@@ -7,7 +7,7 @@
   <div class="contianer">
     <div class="card-deck ">
       {% for item in qs %}
-      <div class="card mt-4 text-secondary" style="max-width: 16rem;" >
+      <div class="card mt-4 text-secondary" style="max-width: 14rem;" >
         <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{item.name}}</h5>
@@ -17,6 +17,8 @@
           
           <span class="fa fa-star"></span>
           <small class="text-muted">{{item.rating}}</small>
+          <hr>
+          <a href="{% url "movies:delete" item.pk%}"><button type="submit" class="btn btn-danger">Delete</button></a>
         </div>
       </div>
      {% endfor %}

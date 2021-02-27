@@ -18,5 +18,5 @@ class Movie(models.Model):
         self.years=years
         self.actor_list=actor_list
         self.rating=rating
-        self.image=img
+        #self.image=img
         super().save(*args,**kwargs)

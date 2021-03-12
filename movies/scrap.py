@@ -39,6 +39,22 @@ def main(url):
         return titles[idx], ratings[idx] ,img[idx]
 
 
-        
-    
+def get_siries(url):
+	response=requests.get(url)
+	soup=BeautifulSoup(response.text,'html.parser')
+	sirietag=soup.find_all()
+	inner_serietags=soup.find_all()
+	rating_tag=soup.find_all()
+	image=soup.select()
+	def get_years():
+		moviesplit=sirietag.txt.split()
+		year=moviesplit[-1]
+		return year
+
+	titles=[tag.txt for tag in inner_serietags]
+	rating=[tag.txt for tag in rating_tag]
+	img=[imag['src'] for imag in image]
+	n_serie=len(titles)
+	
+
 

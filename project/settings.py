@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'movies',
+    'series',
     'crispy_forms',
     'bootstrapform',
     'django.contrib.admin',

@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 
-def main(url):
+def get_series(url):
     response = requests.get(url)
 
     soup = BeautifulSoup(response.text, 'html.parser')
